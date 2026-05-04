@@ -1,4 +1,4 @@
-# U2SR 고성능 센서 시스템 — 전자회로 완전 참고서
+# 고성능 센서 시스템 — 전자회로 완전 참고서
 # OrCAD Schematic Style | WHY → WHAT → HOW
 # 작성: 김명준 (UTuSAR) | Ver 1.0
 
