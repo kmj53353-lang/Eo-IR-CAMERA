@@ -1,4 +1,4 @@
-# U2SR EO/IR — PLC 래더 + Function Block ASCII 다이어그램
+# EO/IR — PLC 래더 + Function Block ASCII 다이어그램
 ## 전기 조건 → IC 동작 → 카메라 영상 결과 시각화
 
 ---
