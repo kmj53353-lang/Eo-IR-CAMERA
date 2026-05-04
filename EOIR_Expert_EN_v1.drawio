@@ -1,0 +1,1296 @@
+<mxfile host="65bd71144e">
+    <diagram id="UgPrUsrrMCcilI8Hn-PL" name="Page-1">
+        <mxGraphModel dx="10330" dy="6495" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3400" pageHeight="2600" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="bg" value="" style="rounded=0;fillColor=#000000;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-147" y="-50" width="4000" height="3200" as="geometry"/>
+                </mxCell>
+                <mxCell id="title" value="&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:17px&#39;&gt;&lt;b&gt;EO/IR Camera System — Expert Block Diagram (EN) v1&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#888888&#39; style=&#39;font-size:10px&#39;&gt;WHY (physics/algorithm causality) · WHAT (components) · HOW (algorithm steps) | Black BG | Researcher Edition | UTuSAR HW Div.&lt;/font&gt;" style="text;html=1;strokeColor=#00ff99;fillColor=#050f08;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="15" width="2640" height="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="h1" value="① Optics" style="text;html=1;fillColor=#0d2b45;strokeColor=#4a90d9;fontColor=#4a90d9;fontStyle=1;fontSize=11;align=center;verticalAlign=middle;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="82" width="190" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="h2" value="② Detector" style="text;html=1;fillColor=#0d3320;strokeColor=#00cc44;fontColor=#00cc44;fontStyle=1;fontSize=11;align=center;verticalAlign=middle;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="82" width="190" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="h3" value="③ Readout / Signal" style="text;html=1;fillColor=#2b2000;strokeColor=#ffcc00;fontColor=#ffcc00;fontStyle=1;fontSize=11;align=center;verticalAlign=middle;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="82" width="190" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="h4" value="④ Image Processing" style="text;html=1;fillColor=#2b0d0d;strokeColor=#ff4444;fontColor=#ff4444;fontStyle=1;fontSize=11;align=center;verticalAlign=middle;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="82" width="210" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="h5" value="⑤ Output / Comms" style="text;html=1;fillColor=#1a0d2b;strokeColor=#cc88ff;fontColor=#cc88ff;fontStyle=1;fontSize=11;align=center;verticalAlign=middle;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="82" width="190" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="ir_lens" value="&lt;b&gt;&lt;font color=&#39;#4a90d9&#39;&gt;IR Lens&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Ge / Chalcogenide&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  SiO₂ glass is OPAQUE at λ&gt;5μm (lattice phonon absorption). Ge (n≈4.0, transparent 2~16μm) is the only practical refractive material. Low F/# required because NEDT ∝ F/#² — halving F/# cuts noise 4×.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  f=50~200mm, F/1.0~F/2.5, AR-coated (DLC or ZnS), τ&gt;95%&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Planck radiance L(λ,T)→refracted by Ge lens→focused on FPA focal plane. Zoom: DC motor drives lens group; Hall sensor + PID closes position loop.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0a1a2e;strokeColor=#4a90d9;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="116" width="190" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="eo_lens" value="&lt;b&gt;&lt;font color=&#39;#4a90d9&#39;&gt;EO Lens&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Optical glass + AR&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Daylight target ID needs high MTF at spatial freq = D/2λf (Rayleigh limit). Long focal length with short physical length requires telephoto layout (negative rear group). Without Boresight alignment, EO&amp;IR pixels map to different real-world points → fusion fails.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  400~900nm, ×30 continuous zoom, f=50~500mm, BK7+N-SF11&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Zoom: encoder reads position → MCU computes error → PWM to DC motor. Focus: phase-detect AF or contrast maximization loop.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0a1a2e;strokeColor=#4a90d9;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="258" width="190" height="135" as="geometry"/>
+                </mxCell>
+                <mxCell id="bsplit" value="&lt;b&gt;&lt;font color=&#39;#4a90d9&#39;&gt;Beamsplitter / Filter&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Dichroic&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  If EO and IR use separate optical axes, Boresight error accumulates with temperature &amp; vibration. Coaxial (parfocal) design eliminates this — one optic, two detectors. Motorized filter wheel enables LWIR↔MWIR switching without mechanical realignment.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Dichroic mirror: VIS→CCD, IR→FPA. Thin-film stack, cut-on accuracy ±2nm&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Thin-film interference: 2·n·d·cosθ = mλ. Stepper motor indexes filter wheel to correct position; home sensor zeroes on power-up.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0a1a2e;strokeColor=#4a90d9;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="405" width="190" height="135" as="geometry"/>
+                </mxCell>
+                <mxCell id="ir_fpa" value="&lt;b&gt;&lt;font color=&#39;#00cc44&#39;&gt;IR FPA Detector&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;InSb / MCT / VOx&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY cooling to 77K?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  InSb bandgap Eg=0.17eV. Thermal energy at 300K: kT=26meV. Ratio Eg/kT≈6.5 → thermally-generated e⁻ (dark current) overwhelms photo-generated e⁻. At 77K, kT=6.6meV → Eg/kT≈26 → dark current drops ~10⁸×. Without this, signal is buried in noise. NUC is then meaningless.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Pixel equiv circuit: Iph ∥ Id ∥ Cj ∥ Rsh. 640×512, 12μm pitch. NEDT&lt;20mK target.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Photon hits InSb → excites e⁻ across bandgap → photocurrent Iph=η·q·Φ flows into ROIC via Indium bump. All 640×512 pixels integrate in parallel; ROIC reads them out serially.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#081a0d;strokeColor=#00cc44;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="116" width="190" height="165" as="geometry"/>
+                </mxCell>
+                <mxCell id="eo_cmos" value="&lt;b&gt;&lt;font color=&#39;#00cc44&#39;&gt;EO CMOS Sensor&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;BSI / Sony IMX&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY BSI + Global Shutter?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  FSI (Front-Side Illumination): metal routing blocks photons → QE≈50%. BSI flips wafer → routing behind photodiode → QE≈95%. Global Shutter: all pixels expose simultaneously → fast-moving targets have zero rolling-shutter distortion (skew artifact). Critical for tracking missiles/drones.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  4T pixel: Transfer(Tx), Reset(RST), Source-Follower(SF), Select(SEL). WDR&gt;120dB, 0.001 lux sensitivity.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Integration: RST↑→Tx↓ (clear) →Tx↑ (integrate)→ Tx↓ (hold) → SF reads Vfd → CDS subtracts reset noise → column ADC digitizes.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#081a0d;strokeColor=#00cc44;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="293" width="190" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="tec" value="&lt;b&gt;&lt;font color=&#39;#00cc44&#39;&gt;TEC Cooler + PID&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Peltier + H-Bridge&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY PID (not Bang-Bang)?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  TEC has thermal mass (C_th) and thermal resistance (R_th). Bang-bang control causes T oscillation → dark current oscillates → NUC offset drifts → FPN re-appears. P-only has steady-state error. I-term eliminates steady-state error by integrating past errors. D-term predicts overshoot and damps it. Together: ±0.05K stability.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  H-Bridge (4× MOSFET, IR2104 gate driver), NTC thermistor, INA219 current sense, MCU.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW algorithm&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ① Thermistor V→ADC→Steinhart-Hart→T_actual ② e=T_set-T_actual ③ u=Kp·e + Ki·∫e·dt + Kd·de/dt ④ u→PWM duty → H-Bridge → TEC current direction &amp; magnitude ⑤ H-Bridge: Q1+Q4 ON = forward (cool); Q2+Q3 ON = reverse (heat). Dead-time inserted to prevent shoot-through.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#081a0d;strokeColor=#00cc44;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="465" width="190" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="roic" value="&lt;b&gt;&lt;font color=&#39;#ffcc00&#39;&gt;ROIC&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Readout Integrated Circuit&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY CTIA (not DI)?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Direct Injection (DI) couples FPA bias to gate — non-linear at low photocurrent (Iph&lt;10nA), injection efficiency η&lt;1. CTIA (Capacitive Trans-Impedance Amp) holds virtual ground at detector node regardless of Iph level → linear charge integration over full dynamic range. Essential for NEDT &lt; 20mK.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Cf=10fF~1pF integration cap, CDS (Correlated Double Sampling), 14bit SAR ADC, LVDS output. Indium bumps &lt;10μm diameter connect to FPA.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW algorithm&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ① RESET pulse: clamp Cf, sample V_reset (contains kTC noise) ② INTEGRATE: Iph charges Cf for Tint ms → Vout=Iph·Tint/Cf ③ CDS: V_signal - V_reset → kTC noise cancels ④ MUX selects pixel column → 14bit ADC → LVDS serialized at 400Mbps/pair to FPGA.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1200;strokeColor=#ffcc00;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="116" width="190" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="tia" value="&lt;b&gt;&lt;font color=&#39;#ffcc00&#39;&gt;TIA&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Trans-Impedance Amplifier&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY TIA (not voltage amp)?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Photodetector is a current source (Iph=nA~μA) with high output impedance. A voltage amp would require an I→V resistor, but large R = large Johnson noise (Vn=√4kTRB) AND bandwidth BW=1/(2πRC). TIA uses op-amp feedback to force virtual ground at detector → zero voltage swing → no detector junction capacitance RC limiting. Gain and BW set independently by Rf and Cf.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  OPA657 (GBW=1.6GHz, In=1.3fA/√Hz), Rf=100kΩ, Cf=0.1pF, guard ring PCB.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW algorithm&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ① Iph flows into virtual GND (inverting input) ② Op-amp drives output to Vout=-Iph·Rf ③ Cf in parallel with Rf: BW=√(GBW/2π·Rf·Cf) — limits peaking. ④ Guard ring: driven at same V as IN- node → PCB leakage current flows to guard, NOT into Rf. ⑤ Vout→FDA differential driver→AAF (fc=1GHz)→ADC.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1200;strokeColor=#ffcc00;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="318" width="190" height="195" as="geometry"/>
+                </mxCell>
+                <mxCell id="adc" value="&lt;b&gt;&lt;font color=&#39;#ffcc00&#39;&gt;ADC&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Analog-to-Digital Converter&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY 16-bit? Why separate clock?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  16-bit = 96dB dynamic range = 65536 temperature levels. Clock jitter σ_j causes aperture uncertainty: SNR_jitter = -20·log(2π·f·σ_j). At 100MHz, σ_j&gt;200fs → SNR drops below 14-bit ENOB. So clock must be low-jitter VCXO/TCXO. Analog and digital grounds MUST be split: digital switching noise couples through common impedance → degrades SFDR.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  AD9268, 16bit/80MSPS, SAR+pipeline hybrid, FDA input driver.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW algorithm&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ① FDA converts single-ended TIA output → differential ② AAF (4th-order Butterworth, fc=40MHz) removes aliases ③ SAR loop: DAC output compared to Vin → MSB→LSB bisection (16 cycles) ④ Result → JESD204B serial interface → FPGA.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1200;strokeColor=#ffcc00;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="525" width="190" height="175" as="geometry"/>
+                </mxCell>
+                <mxCell id="fpga" value="&lt;b&gt;&lt;font color=&#39;#ff4444&#39;&gt;FPGA — NUC + BPC + CLAHE&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Xilinx UltraScale+&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY NUC before anything else?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Each pixel has unique offset (dark current) and gain (responsivity) variation σ/μ≈1~5%. This Fixed Pattern Noise (FPN) looks like vertical/horizontal stripes. IRST algorithms mistake stripes for targets → false alarms. NUC MUST run before IRST, fusion, or display. Order matters: NUC→BPC→CLAHE. Reversing corrupts the correction.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  BRAM LUT (640×512×32bit=1.25MB), clipLimit register, bad-pixel coordinate ROM.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW algorithm&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  NUC 2-point: ① Point blackbody at T_cold → record V_cold[x,y] ② Point at T_hot → record V_hot[x,y] ③ Gain[x,y]=(T_hot-T_cold)/(V_hot-V_cold) ④ Offset[x,y]=T_cold - Gain·V_cold ⑤ Every frame: T[x,y]=Gain[x,y]·V_raw[x,y]+Offset[x,y] BPC: bad pixel list → replace with bilinear(neighbors). CLAHE: divide frame into 8×8 tiles → equalize each histogram → clip at clipLimit → bilinear blend tile borders. Latency: &lt;1 frame (pipeline, no frame buffer needed).&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a0505;strokeColor=#ff4444;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="116" width="210" height="245" as="geometry"/>
+                </mxCell>
+                <mxCell id="isp" value="&lt;b&gt;&lt;font color=&#39;#ff4444&#39;&gt;ISP / SoC — NR + Encode&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Jetson Orin NX&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY temporal NR before spatial?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Spatial filter blurs edges IF noise removed first spatially = target boundary lost. Temporal NR averages static regions across frames (random noise ↓√N) WITHOUT blurring edges, because moving edges are excluded by motion estimation. Then spatial (Bilateral) refines residual. Order: Temporal→Spatial→Sharpen. H.265 needed because 4K IR raw = 11.5Gbps; satellite link allows ~30Mbps.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Bilateral filter, H.265 HW encoder, False Color LUT (Iron/Rainbow), MIPI CSI-2.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW algorithm&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ① Motion Est: SAD block matching → classify pixels as static/moving ② Static: weighted avg with past N frames ③ Bilateral: w(Δpos,ΔI)=G_space·G_range → edge-preserving smooth ④ Unsharp mask: Out=In+α·(In-Gauss(In)) ⑤ False Color: T→LUT→RGB ⑥ H.265 CTU 64×64→RDO→entropy code.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a0505;strokeColor=#ff4444;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="372" width="210" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="fusion" value="&lt;b&gt;&lt;font color=&#39;#ff4444&#39;&gt;EO/IR Fusion&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Wavelet / DNN&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY Wavelet (not simple average)?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Simple average blurs both images equally → loses IR thermal contrast AND EO texture. Wavelet decomposes into frequency sub-bands (LL,LH,HL,HH). Max-abs rule selects the sub-band coefficient with more information per frequency → preserves sharpness of both. DNN (U-Net) learns perceptual quality but latency &gt;10ms; Wavelet &lt;5ms → real-time tracking requires Wavelet on FPGA.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Registration: SIFT/ORB keypoints → RANSAC homography H. Wavelet: Haar/Daubechies 2D DWT.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW algorithm&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ① SIFT: detect keypoints → 128-dim descriptor → match → RANSAC removes outliers → compute H (3×3) ② Warp IR frame by H to align with EO ③ 2D DWT both images → {LL,LH,HL,HH} ④ Fused coeff = max(|W_EO|,|W_IR|) per sub-band ⑤ IDWT → fused image. Quality metric: MI (Mutual Information) and SSIM monitored online.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a0505;strokeColor=#ff4444;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="583" width="210" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="irst" value="&lt;b&gt;&lt;font color=&#39;#ff6600&#39;&gt;IRST + Kalman Tracker&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;CFAR + KF&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY Kalman (not simple track)?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Shutter NUC blanks sensor for ~200ms every 5min. During blank, target continues moving. Without prediction, track is lost → reacquire from scratch → latency spike. Kalman state [x,y,vx,vy] predicts position during blank using kinematics. Also: CFAR threshold adapts to local clutter so fixed threshold would either miss dim targets or flood with false alarms in clouds/terrain.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  2D CFAR detector, Kalman filter (linear), Hungarian algorithm (data association).&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW algorithm&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ① 2D CFAR: for each cell, compute mean of surrounding guard+reference ring → threshold=α·mean → detect if cell&gt;threshold ② Kalman predict: x̂⁻=F·x̂, P⁻=F·P·Fᵀ+Q ③ Kalman update: K=P⁻·Hᵀ·(H·P⁻·Hᵀ+R)⁻¹, x̂=x̂⁻+K·(z-H·x̂⁻) ④ Hungarian: minimize assignment cost (distance) between detections and tracks ⑤ Output: (x,y,w,h) → servo PID.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a0a00;strokeColor=#ff6600;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="-180" y="748" width="210" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdmi_out" value="&lt;b&gt;&lt;font color=&#39;#cc88ff&#39;&gt;Video Output&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;HDMI / HD-SDI&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY HD-SDI over HDMI?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  HDMI uses TMDS — susceptible to common-mode EMI from vehicle engines/radars. HD-SDI uses 75Ω coax, 800mV single-ended, CM noise rejected by 75Ω termination at receiver. Cable run up to 100m. STANAG 3910 for NATO aircraft bus (optical fiber, immune to EMP). OSD GPS coordinates enable target designation (TTNT).&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ADV7511 (HDMI), GS2971 (SDI Rx/Tx), BNC 75Ω, OSD overlay engine.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  FPGA→parallel pixel bus→SDI serializer→NRZI scramble→75Ω output. OSD: FPGA alpha-blends GPS/azimuth text (pixel=α·FG+(1-α)·BG) each frame.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#100820;strokeColor=#cc88ff;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="116" width="195" height="165" as="geometry"/>
+                </mxCell>
+                <mxCell id="net_out" value="&lt;b&gt;&lt;font color=&#39;#cc88ff&#39;&gt;Network Output&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;GigE / ONVIF&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY H.265 + AES-256?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Raw 4K IR = 11.5Gbps. Satellite uplink (Ku-band) ≈ 10~50Mbps. H.265 HEVC achieves 50:1 compression with acceptable quality. Without encryption, adversary intercepts video (SIGINT) → knows sensor FOV → takes evasive action. AES-256-GCM with DTLS 1.3 adds &lt;1ms overhead on Orin GPU.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  88E1111 GigE PHY, DTLS+SRTP, ONVIF Profile S, QoS DSCP EF.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ISP→H.265 NAL units→DTLS encrypt→RTP packetize→UDP→GigE→satellite modem. ONVIF SOAP/XML handles PTZ command reverse channel.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#100820;strokeColor=#cc88ff;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="293" width="195" height="165" as="geometry"/>
+                </mxCell>
+                <mxCell id="ctrl_if" value="&lt;b&gt;&lt;font color=&#39;#cc88ff&#39;&gt;Control Interface&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;RS-422 / 1553B&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY RS-422 over RS-232/USB?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  RS-232 single-ended → susceptible to ground-loop noise (vehicle chassis = noisy GND). RS-422 differential ±12V → CMRR&gt;60dB → suppresses common-mode EMI. Max 10Mbps at 1200m. MIL-STD-1553B for aircraft: TDM bus, redundant (A+B), 1Mbps, deterministic latency — required for avionics integration. PELCO-D latency &lt;100ms required for smooth PTZ.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  SN75176B driver, 120Ω termination, opto-isolator (ground loop break), TVS ESD.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  PELCO-D frame: 0xFF 0xFF ADDR CMD1 CMD2 CHKSUM → MCU UART→SN75176B→differential line→receiver→decode→PTZ command.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#100820;strokeColor=#cc88ff;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="470" width="195" height="175" as="geometry"/>
+                </mxCell>
+                <mxCell id="servo" value="&lt;b&gt;&lt;font color=&#39;#cc88ff&#39;&gt;Servo PID — Pan-Tilt Stabilization&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY IMU feed-forward + PID?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  PID alone (feedback-only): platform vibration at 10~80Hz → error occurs FIRST → motor corrects AFTER → phase lag → residual jitter at high freq. IMU measures angular rate INSTANTLY → feed-forward torque applied BEFORE error appears → loop BW effectively extends to IMU bandwidth (~500Hz). Result: &lt;30μrad LOS stability = 3cm error at 1km. Without this, ×30 zoom target drifts out of FOV every 0.1s.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ccff&#39; style=&#39;font-size:8px&#39;&gt;▶ WHAT&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ICM-42688 (ARW&lt;0.07°/√h), BLDC motor, AS5047P 16-bit absolute encoder, FOC.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW algorithm&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  ① IMU SPI read ω (rad/s) → feed-forward: τ_ff = J·ω ② Encoder reads θ_actual → θ_error = θ_target - θ_actual ③ PID outer loop → ω_cmd ④ FOC inner loop: Clark transform (I_abc→I_αβ) → Park transform (I_αβ→I_dq) → PI regulates I_q (torque), I_d=0 → inverse Park → SVPWM → 3-phase inverter → BLDC ⑤ IRST (x,y) error feeds θ_target update for target tracking.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#100820;strokeColor=#cc88ff;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="657" width="195" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="pwr_in" value="&lt;b&gt;&lt;font color=&#39;#aaaaaa&#39;&gt;Power Input&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;MIL-STD-704F&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY TVS + Fuse + P-MOS?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Vehicle bus spikes &gt;100V/1ms (MIL-STD-704). TVS clamps surge. Fuse protects wiring. P-MOSFET blocks reverse polarity without voltage drop of diode (Vf=0 in saturation). LC π-filter: MIL-STD-461 conducted emission requires &lt;-10dBμV at 10kHz.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  28V→Fuse(F1)→TVS(SMBJ28A)→L(100μH)→C(10μF)→P-MOS gate controlled by supervisory IC→Bus rail.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111111;strokeColor=#888888;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="-1213" y="738" width="190" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="dcdc" value="&lt;b&gt;&lt;font color=&#39;#aaaaaa&#39;&gt;DC-DC + LDO&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;Buck + LDO&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY LDO after Buck? Why sequencing?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Buck switching ripple (50mV p-p) corrupts ADC reference → SFDR degrades. LDO (PSRR&gt;60dB@1kHz) reduces ripple to &lt;50μV for analog rails. Power sequencing: FPGA CMOS latch-up occurs if I/O power (3.3V) rises before core power (0.85V) — parasitic SCR triggers → device destroyed. TPS3431 enforces Core→IO→Peripherals order.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Buck: PWM(fsw=1MHz)→FET→L→C→Vout. Vout=D·Vin. PG (power-good) chain: each rail asserts PG when stable → next rail enabled.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111111;strokeColor=#888888;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="-954" y="733" width="200" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="tec_drv2" value="&lt;b&gt;&lt;font color=&#39;#aaaaaa&#39;&gt;TEC Driver&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;H-Bridge + PID&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY H-Bridge over linear driver?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Linear driver: P_loss=(Vsupply-Vtec)·Itec. At 5V supply, 2V TEC, 3A: P_loss=9W → heats enclosure → thermal gradient degrades optics. H-Bridge switching: η&gt;93% → P_loss&lt;0.5W. Shoot-through (both top+bottom FET ON) destroys MOSFETs → IR2104 dead-time (400ns) prevents this.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  Q1+Q4 ON(cool): current A→TEC→B. Q2+Q3 ON(heat): current B→TEC→A. PWM duty=|u_PID|, direction=sign(u_PID). 10mΩ shunt+INA219 measures actual current.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111111;strokeColor=#888888;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="-656" y="733" width="200" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" style="edgeStyle=none;html=1;" parent="1" source="pwr_seq" target="bg" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="pwr_seq" value="&lt;b&gt;&lt;font color=&#39;#ff4444&#39;&gt;Power Sequencing&lt;/font&gt;&lt;/b&gt; &lt;font color=&#39;#444&#39; style=&#39;font-size:8px&#39;&gt;TPS3431&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#ff6666&#39; style=&#39;font-size:8px&#39;&gt;▶ WHY fixed order?&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  CMOS contains parasitic P-N-P-N structure (SCR). Wrong power order → substrate-well junction reverse biased → SCR latches on → tens of amps flow → ROIC permanently destroyed. Rule: lower voltage first, higher last. VBIAS always last. OFF = reverse order.&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#66ff66&#39; style=&#39;font-size:8px&#39;&gt;▶ HOW&lt;/font&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:8px&#39;&gt;  GND(always)→Core(0.85V)→DDR(1.35V)→IO(3.3V)→Analog(±15V)→VBIAS(last). Each step gated by PG signal + RC delay. Shutdown: reverse. TPS3431 monitors all rails; any under-voltage → shuts all rails simultaneously.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a0505;strokeColor=#ff4444;fontSize=9;strokeWidth=2;arcSize=6;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="398" y="839" width="195" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="dep" value="&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;▶ System Dependency Chain (WHY order matters)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Power Seq → ROIC SPI init → TEC 77K stable → NUC 2-pt calibration → FPGA pipeline → IRST detection → Servo PID tracking&lt;br&gt;&lt;font color=&#39;#ff4444&#39;&gt;Break any link = all downstream steps invalid. This is the fundamental design axiom.&lt;/font&gt;&lt;/font&gt;" style="text;html=1;fillColor=#050f08;strokeColor=#00ff99;align=left;rounded=1;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="-343" y="606" width="210" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" value="&lt;font color=&#39;#4a90d9&#39; style=&#39;font-size:8px&#39;&gt;IR photon&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4a90d9;strokeWidth=2;fontSize=8;fontColor=#4a90d9;" parent="1" source="ir_lens" target="ir_fpa" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" value="&lt;font color=&#39;#4a90d9&#39; style=&#39;font-size:8px&#39;&gt;VIS photon&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4a90d9;strokeWidth=2;" parent="1" source="eo_lens" target="eo_cmos" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_bs" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4a90d9;strokeWidth=1.5;dashed=1;" parent="1" source="bsplit" target="ir_fpa" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3" value="&lt;font color=&#39;#00cc44&#39; style=&#39;font-size:8px&#39;&gt;Iph (nA)&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#00cc44;strokeWidth=2;" parent="1" source="ir_fpa" target="roic" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4" value="&lt;font color=&#39;#00cc44&#39; style=&#39;font-size:8px&#39;&gt;Iph (μA)&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#00cc44;strokeWidth=2;" parent="1" source="eo_cmos" target="tia" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_tec" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#00cc44;strokeWidth=1.5;dashed=1;" parent="1" source="tec" target="tec_drv2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e5" value="&lt;font color=&#39;#ffcc00&#39; style=&#39;font-size:8px&#39;&gt;LVDS 14bit&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ffcc00;strokeWidth=2;" parent="1" source="roic" target="fpga" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e6" value="&lt;font color=&#39;#ffcc00&#39; style=&#39;font-size:8px&#39;&gt;Vout&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ffcc00;strokeWidth=2;" parent="1" source="tia" target="adc" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e7" value="&lt;font color=&#39;#ffcc00&#39; style=&#39;font-size:8px&#39;&gt;16bit&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ffcc00;strokeWidth=2;" parent="1" source="adc" target="isp" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ff4444;strokeWidth=2;" parent="1" source="fpga" target="isp" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ff4444;strokeWidth=2;" parent="1" source="isp" target="fusion" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ff6600;strokeWidth=2;" parent="1" source="fusion" target="irst" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e11" value="&lt;font color=&#39;#cc88ff&#39; style=&#39;font-size:8px&#39;&gt;video&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#cc88ff;strokeWidth=2;" parent="1" source="fpga" target="hdmi_out" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#cc88ff;strokeWidth=2;" parent="1" source="isp" target="net_out" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#cc88ff;strokeWidth=1.5;" parent="1" source="irst" target="ctrl_if" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e14" value="&lt;font color=&#39;#cc88ff&#39; style=&#39;font-size:8px&#39;&gt;(x,y,w,h)&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#cc88ff;strokeWidth=2;" parent="1" source="irst" target="servo" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_fb" value="&lt;font color=&#39;#ff6600&#39; style=&#39;font-size:7px&#39;&gt;feedback&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ff6600;strokeWidth=1.5;dashed=1;exitX=0;exitY=0.5;entryX=0;entryY=0.9;fontSize=7;fontColor=#ff6600;" parent="1" source="pwr_hdr" target="irst" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ep1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666;strokeWidth=1.5;dashed=1;" parent="1" source="pwr_in" target="dcdc" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ep2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666;strokeWidth=1.5;dashed=1;" parent="1" source="dcdc" target="tec_drv2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ep3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ff4444;strokeWidth=1.5;dashed=1;" parent="1" source="pwr_seq" target="fpga" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="997" y="895"/>
+                            <mxPoint x="997" y="730"/>
+                            <mxPoint x="795" y="730"/>
+                            <mxPoint x="795" y="361"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="spec_bg" value="" style="rounded=1;fillColor=#050a14;strokeColor=#4a90d9;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1403" y="74" width="235" height="910" as="geometry"/>
+                </mxCell>
+                <mxCell id="spec_t" value="&lt;font color=&#39;#4a90d9&#39; style=&#39;font-size:11px&#39;&gt;&lt;b&gt;Key Design Parameters&lt;/b&gt;&lt;/font&gt;" style="text;html=1;fillColor=none;strokeColor=none;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="1421" y="88" width="235" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="spec_c" value="&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:9px&#39;&gt;&lt;b&gt;IR Detector&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#888&#39; style=&#39;font-size:8px&#39;&gt;NEDT &lt; 20~50mK | FPA 640×512 12μm&lt;br&gt;InSb@77K | MCT@200K | kT@77K=6.6meV&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:9px&#39;&gt;&lt;b&gt;EO Sensor&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#888&#39; style=&#39;font-size:8px&#39;&gt;QE≈95% (BSI) | WDR&gt;120dB | 0.001lux&lt;br&gt;Global Shutter | FWC 50ke⁻&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:9px&#39;&gt;&lt;b&gt;Optics&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#888&#39; style=&#39;font-size:8px&#39;&gt;IR: F/1.0~F/2.5, Ge, τ&gt;95%&lt;br&gt;EO: ×30 zoom | MTF@Nyquist&gt;0.3&lt;br&gt;Boresight error &lt;0.1mrad&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:9px&#39;&gt;&lt;b&gt;TIA / ADC&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#888&#39; style=&#39;font-size:8px&#39;&gt;OPA657 GBW=1.6GHz, In=1.3fA/√Hz&lt;br&gt;Rf=100kΩ | Cf=0.1pF | ENOB≥12bit&lt;br&gt;Clock jitter &lt;200fs RMS&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:9px&#39;&gt;&lt;b&gt;FPGA Pipeline&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#888&#39; style=&#39;font-size:8px&#39;&gt;NUC 2-pt | CLAHE clipLimit=2.0&lt;br&gt;Latency: &lt;1 frame (33ms@30fps)&lt;br&gt;BRAM: 1.25MB NUC LUT&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:9px&#39;&gt;&lt;b&gt;IRST / Kalman&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#888&#39; style=&#39;font-size:8px&#39;&gt;2D OS-CFAR | State: [x,y,vx,vy]&lt;br&gt;Shutter gap: 200ms, predicted by KF&lt;br&gt;Hungarian assignment cost min.&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:9px&#39;&gt;&lt;b&gt;Servo / IMU&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#888&#39; style=&#39;font-size:8px&#39;&gt;ICM-42688 ARW&lt;0.07°/√h&lt;br&gt;AS5047P 16-bit encoder | FOC Id=0&lt;br&gt;LOS stability &lt;30μrad (3σ)&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:9px&#39;&gt;&lt;b&gt;Comms&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#888&#39; style=&#39;font-size:8px&#39;&gt;HD-SDI 1.485Gbps | GigE 1000BASE-T&lt;br&gt;H.265: 11.5Gbps→30Mbps&lt;br&gt;AES-256-GCM + DTLS 1.3&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:9px&#39;&gt;&lt;b&gt;Power / Env&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#888&#39; style=&#39;font-size:8px&#39;&gt;20~80W | -40°C~+71°C&lt;br&gt;MIL-STD-810G/461F/704F | IP67&lt;/font&gt;" style="text;html=1;fillColor=none;strokeColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=9;" parent="1" vertex="1">
+                    <mxGeometry x="1426" y="111" width="225" height="875" as="geometry"/>
+                </mxCell>
+                <mxCell id="gloss_hdr" value="&lt;font color=&#39;#00ff99&#39; style=&#39;font-size:13px&#39;&gt;&lt;b&gt;GLOSSARY — Term Reference (for non-specialists and cross-functional review)&lt;/b&gt;&lt;/font&gt;" style="text;html=1;fillColor=#050f08;strokeColor=#00ff99;align=left;rounded=1;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="1010" width="1350" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="g1" value="&lt;font color=&#39;#ffcc00&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;FPA (Focal Plane Array)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;A 2D grid of photodetectors (pixels) placed at the focal point of the optics. Each pixel independently converts photons to electrical current. 640×512 means 327,680 pixels. &#39;Focal plane&#39; = the image plane where light from infinity focuses.&lt;/font&gt;" style="rounded=1;fillColor=#0a0a00;strokeColor=#ffcc00;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="1050" width="220" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="g2" value="&lt;font color=&#39;#ffcc00&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;NEDT (Noise Equivalent ΔTemperature)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;The smallest temperature difference (in mK) that the IR camera can distinguish from noise. NEDT &lt; 20mK means the camera detects a 0.02°C difference. Lower is better. Formula: NEDT = NEP / (dP/dT·A·τ). Driven by detector sensitivity, optics F/#, and electronics noise.&lt;/font&gt;" style="rounded=1;fillColor=#0a0a00;strokeColor=#ffcc00;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="1050" width="220" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="g3" value="&lt;font color=&#39;#ffcc00&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;NUC (Non-Uniformity Correction)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Each pixel responds slightly differently to the same input (like a screen where some pixels are brighter). NUC maps each pixel&#39;s raw output to a corrected value using per-pixel Gain and Offset coefficients. Without NUC, the image shows fixed stripe patterns (FPN). Think of it as calibrating each pixel individually.&lt;/font&gt;" style="rounded=1;fillColor=#0a0a00;strokeColor=#ffcc00;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="1050" width="220" height="105" as="geometry"/>
+                </mxCell>
+                <mxCell id="g4" value="&lt;font color=&#39;#ffcc00&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;FPN (Fixed Pattern Noise)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Systematic, repeating noise patterns in images that stay in the same pixel positions frame after frame. Unlike random noise (which averages out), FPN does not. In IR cameras it appears as vertical stripes. IRST algorithms can confuse FPN stripes with real targets → false alarms. NUC removes FPN.&lt;/font&gt;" style="rounded=1;fillColor=#0a0a00;strokeColor=#ffcc00;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="1050" width="220" height="105" as="geometry"/>
+                </mxCell>
+                <mxCell id="g5" value="&lt;font color=&#39;#ffcc00&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;ROIC (Readout Integrated Circuit)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;The IC bonded directly to the FPA detector array. Its job: read the tiny photocurrent from each pixel, amplify it, convert to voltage, then digitize. Connected to FPA via Indium bump bonds — tiny solder balls &lt;10μm in diameter, one per pixel. ROIC is the bridge between optics/detector world and the digital domain.&lt;/font&gt;" style="rounded=1;fillColor=#0a0a00;strokeColor=#ffcc00;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="1050" width="220" height="105" as="geometry"/>
+                </mxCell>
+                <mxCell id="g6" value="&lt;font color=&#39;#ffcc00&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;CTIA (Capacitive Trans-Impedance Amp)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;A pixel-level amplifier inside ROIC that integrates (accumulates) photocurrent onto a small capacitor (Cf). Output voltage = charge / Cf = (Iph × integration_time) / Cf. Maintains virtual ground at detector node → linear behavior regardless of signal level. Alternative to older DI (Direct Injection) which is non-linear at low currents.&lt;/font&gt;" style="rounded=1;fillColor=#0a0a00;strokeColor=#ffcc00;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="1050" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="g7" value="&lt;font color=&#39;#00cc44&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;TEC (Thermoelectric Cooler)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;A solid-state heat pump using the Peltier effect: pass current through a semiconductor junction → one side gets cold, other side gets hot. No moving parts (except Stirling for 77K). Used to cool InSb detector to 77K (-196°C) to suppress dark current. PID control loop maintains temperature within ±0.05K.&lt;/font&gt;" style="rounded=1;fillColor=#000a00;strokeColor=#00cc44;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="1165" width="220" height="105" as="geometry"/>
+                </mxCell>
+                <mxCell id="g8" value="&lt;font color=&#39;#00cc44&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;PID Control&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Proportional-Integral-Derivative controller. P: reacts to current error (immediate but can oscillate). I: reacts to accumulated past error (eliminates steady-state offset). D: reacts to rate of error change (predicts and damps overshoot). Together they achieve stable, accurate control. Used for TEC temperature and servo motor position.&lt;/font&gt;" style="rounded=1;fillColor=#000a00;strokeColor=#00cc44;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="1165" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="g9" value="&lt;font color=&#39;#00cc44&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;H-Bridge&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;A circuit with 4 switches (MOSFETs) arranged in an H shape. Enables current to flow in EITHER direction through the load (TEC or motor). Q1+Q4 ON = forward current. Q2+Q3 ON = reverse current. Never turn Q1+Q2 (or Q3+Q4) ON simultaneously — shoot-through shorts power supply. Dead-time (400ns) prevents this.&lt;/font&gt;" style="rounded=1;fillColor=#000a00;strokeColor=#00cc44;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="1165" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="g10" value="&lt;font color=&#39;#00cc44&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;TIA (Trans-Impedance Amplifier)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Converts a tiny current (nA) from a photodetector into a usable voltage. Uses an op-amp with a feedback resistor Rf: Vout = -Iph × Rf. The op-amp&#39;s virtual ground keeps the detector bias voltage constant (no voltage swing = no capacitance RC bandwidth limit). Essential first stage for EO detector signal chain.&lt;/font&gt;" style="rounded=1;fillColor=#000a00;strokeColor=#00cc44;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="1165" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="g11" value="&lt;font color=&#39;#00cc44&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;LVDS (Low Voltage Differential Signaling)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;High-speed serial interface using differential signal pairs (±350mV). Differential means two wires carry opposite signals — any common-mode noise (EMI) appears equally on both and cancels at the receiver. Allows 400Mbps+ at low power over PCB traces. Used between ROIC and FPGA to transmit digitized pixel data.&lt;/font&gt;" style="rounded=1;fillColor=#000a00;strokeColor=#00cc44;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="1165" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="g12" value="&lt;font color=&#39;#00cc44&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;CDS (Correlated Double Sampling)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Noise cancellation technique in image sensors. Sample pixel voltage BEFORE integration (contains reset noise = kTC noise). Sample AGAIN after integration (contains signal + same reset noise). Subtract: signal only, noise cancels. Critical because kTC noise = √(kT/C) and without CDS it limits dynamic range. Used in both CMOS and ROIC.&lt;/font&gt;" style="rounded=1;fillColor=#000a00;strokeColor=#00cc44;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="1165" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="g13" value="&lt;font color=&#39;#4a90d9&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;CFAR (Constant False Alarm Rate)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Adaptive threshold for target detection. Instead of a fixed threshold (which would miss targets in dark scenes or flood alarms in bright ones), CFAR computes the local background level for each pixel by averaging surrounding reference cells, then sets threshold = α × background. False alarm rate stays constant regardless of scene brightness.&lt;/font&gt;" style="rounded=1;fillColor=#000510;strokeColor=#4a90d9;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="1285" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="g14" value="&lt;font color=&#39;#4a90d9&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;Kalman Filter&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Optimal state estimator for linear systems with Gaussian noise. Alternates between Predict (use physics model to predict next state) and Update (correct prediction with noisy measurement). In IRST: state = [x, y, vx, vy]. During shutter blackout (200ms), runs Predict-only to maintain track. Equivalent to an intelligent interpolator that knows target physics.&lt;/font&gt;" style="rounded=1;fillColor=#000510;strokeColor=#4a90d9;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="1285" width="220" height="115" as="geometry"/>
+                </mxCell>
+                <mxCell id="g15" value="&lt;font color=&#39;#4a90d9&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;FOC (Field-Oriented Control)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Advanced BLDC motor control algorithm. Transforms 3-phase currents (Ia,Ib,Ic) through Clark (→Iα,Iβ) then Park (→Id,Iq) transforms into a rotating reference frame. Controls Id (flux) = 0 and Iq (torque) independently with PI loops. Result: maximum torque per ampere, smooth operation at all speeds. Required for &lt;30μrad pointing accuracy.&lt;/font&gt;" style="rounded=1;fillColor=#000510;strokeColor=#4a90d9;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="1285" width="220" height="115" as="geometry"/>
+                </mxCell>
+                <mxCell id="g16" value="&lt;font color=&#39;#4a90d9&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;CLAHE (Contrast Limited AHE)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Image contrast enhancement. AHE (Adaptive Histogram Equalization) divides image into tiles and equalizes each tile&#39;s histogram independently — much better than global equalization for scenes with large bright and dark regions. &#39;Contrast Limited&#39;: clips histogram peaks at clipLimit before equalization to prevent noise amplification. Tile borders blended bilinearly to avoid block artifacts.&lt;/font&gt;" style="rounded=1;fillColor=#000510;strokeColor=#4a90d9;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="1285" width="220" height="115" as="geometry"/>
+                </mxCell>
+                <mxCell id="g17" value="&lt;font color=&#39;#4a90d9&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;MTF (Modulation Transfer Function)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Measures how well a lens (or complete imaging system) reproduces contrast at different spatial frequencies. MTF=1 means perfect contrast; MTF=0 means no contrast (blur). Specified at Nyquist frequency (= 1/(2×pixel pitch)). MTF &gt; 0.3 at Nyquist is typical military requirement. Low MTF = blurry images = harder target ID.&lt;/font&gt;" style="rounded=1;fillColor=#000510;strokeColor=#4a90d9;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="1285" width="220" height="115" as="geometry"/>
+                </mxCell>
+                <mxCell id="g18" value="&lt;font color=&#39;#4a90d9&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;IRST (IR Search &amp; Track)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;System/algorithm for autonomously detecting and tracking small IR targets (missiles, aircraft, drones) against clutter background. Pipeline: background suppression → CFAR detection → track initiation → data association (Hungarian algorithm) → Kalman tracking → output track file with (x,y,vx,vy). Requires NUC-corrected images to avoid FPN false alarms.&lt;/font&gt;" style="rounded=1;fillColor=#000510;strokeColor=#4a90d9;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="1285" width="220" height="115" as="geometry"/>
+                </mxCell>
+                <mxCell id="g19" value="&lt;font color=&#39;#cc88ff&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;Boresight&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;The alignment between two optical axes (EO and IR) so they point at exactly the same real-world point. Boresight error = angular offset between where EO and IR are &#39;looking&#39;. Even 0.5mrad error at 1km = 50cm pixel offset → EO/IR fusion produces double images. Maintained by mechanical design and in-field calibration.&lt;/font&gt;" style="rounded=1;fillColor=#080012;strokeColor=#cc88ff;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="1410" width="220" height="105" as="geometry"/>
+                </mxCell>
+                <mxCell id="g20" value="&lt;font color=&#39;#cc88ff&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;ENOB (Effective Number of Bits)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;The real-world performance of an ADC, accounting for noise and distortion. A 16-bit ADC may only achieve ENOB=12 due to noise floor and harmonic distortion. ENOB = (SINAD - 1.76) / 6.02. ENOB 12 = effective 72dB dynamic range = 4096 usable levels. Driven by clock jitter, thermal noise, and layout quality.&lt;/font&gt;" style="rounded=1;fillColor=#080012;strokeColor=#cc88ff;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="1410" width="220" height="105" as="geometry"/>
+                </mxCell>
+                <mxCell id="g21" value="&lt;font color=&#39;#cc88ff&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;Wavelet Transform (2D DWT)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Decomposes an image into multiple frequency sub-bands (LL=low-low=smooth, LH=horizontal edges, HL=vertical edges, HH=diagonal edges). Each sub-band can be processed independently. For fusion: select best sub-band from EO or IR per frequency → reconstruct (IDWT). Preserves both IR thermal contrast (low freq) and EO texture (high freq). Faster than DNN.&lt;/font&gt;" style="rounded=1;fillColor=#080012;strokeColor=#cc88ff;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="1410" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="g22" value="&lt;font color=&#39;#cc88ff&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;PSRR (Power Supply Rejection Ratio)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;How well an analog circuit (LDO, op-amp) rejects noise on its power supply rail. PSRR=60dB means a 1V ripple on supply produces only 1mV at output. Critical for ADC reference voltage — if supply ripple couples into Vref, ADC output codes oscillate. This is why a separate LDO (not just Buck) is needed for analog rails.&lt;/font&gt;" style="rounded=1;fillColor=#080012;strokeColor=#cc88ff;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="1410" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="g23" value="&lt;font color=&#39;#cc88ff&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;Latch-up (CMOS)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Catastrophic failure mode in CMOS ICs. Internal parasitic P-N-P-N structure (thyristor) accidentally triggers when power supply sequence is wrong or there is an overvoltage transient. Once triggered, it latches ON — device draws excessive current (tens of amps) regardless of inputs. Usually destroys the IC permanently. Prevented by correct power sequencing (Core before IO) and TVS clamp circuits.&lt;/font&gt;" style="rounded=1;fillColor=#080012;strokeColor=#cc88ff;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="1410" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="g24" value="&lt;font color=&#39;#cc88ff&#39; style=&#39;font-size:10px&#39;&gt;&lt;b&gt;Hungarian Algorithm&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#aaaaaa&#39; style=&#39;font-size:9px&#39;&gt;Optimal assignment algorithm used in multi-target tracking. Given N detections and M existing tracks, it finds the assignment that minimizes total cost (e.g., distance between predicted and detected positions). Solves the combinatorial problem in O(N³) time. Without it, incorrect detector-to-track assignment causes ID switches — track A suddenly jumps to target B position.&lt;/font&gt;" style="rounded=1;fillColor=#080012;strokeColor=#cc88ff;fontSize=9;strokeWidth=1.5;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="1410" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="gfooter" value="&lt;font color=&#39;#444&#39; style=&#39;font-size:9px&#39;&gt;Signal Legend:  &lt;font color=&#39;#4a90d9&#39;&gt;━ Photon  &lt;/font&gt;&lt;font color=&#39;#00cc44&#39;&gt;━ Current/Analog  &lt;/font&gt;&lt;font color=&#39;#ffcc00&#39;&gt;━ Digital  &lt;/font&gt;&lt;font color=&#39;#ff4444&#39;&gt;━ Image Data  &lt;/font&gt;&lt;font color=&#39;#cc88ff&#39;&gt;━ Output  &lt;/font&gt;&lt;font color=&#39;#666&#39;&gt;┅ Power  &lt;/font&gt;&lt;font color=&#39;#ff6600&#39;&gt;┅ Feedback  &lt;/font&gt;  │  Color code blocks: &lt;font color=&#39;#4a90d9&#39;&gt;■ Optics  &lt;/font&gt;&lt;font color=&#39;#00cc44&#39;&gt;■ Detector  &lt;/font&gt;&lt;font color=&#39;#ffcc00&#39;&gt;■ Readout  &lt;/font&gt;&lt;font color=&#39;#ff4444&#39;&gt;■ Image Proc  &lt;/font&gt;&lt;font color=&#39;#cc88ff&#39;&gt;■ Output  &lt;/font&gt;│  Rev.A 2026-04-10 | MJ | UTuSAR HW Research&lt;/font&gt;" style="text;html=1;fillColor=#0a0a0a;strokeColor=#333;align=left;rounded=1;fontSize=9;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="1530" width="1380" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ff6600;strokeWidth=1.5;dashed=1;exitX=0;exitY=0.5;entryX=0;entryY=0.9;fontSize=7;fontColor=#ff6600;" parent="1" source="servo" target="pwr_hdr" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="910" y="762"/>
+                            <mxPoint x="910" y="990"/>
+                            <mxPoint x="670" y="990"/>
+                        </Array>
+                        <mxPoint x="930" y="772" as="sourcePoint"/>
+                        <mxPoint x="-11" y="937" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pwr_hdr" value="⑥ Power Supply" style="text;html=1;fillColor=#1a1a1a;strokeColor=#888888;fontColor=#888888;fontStyle=1;fontSize=11;align=center;verticalAlign=middle;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="-1221" y="700" width="875" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0d1117;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1780" y="96" width="2339" height="3000" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="⚡ 열영상(Thermal Imaging) 카메라 — 전자회로 완전판" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#00e5a0;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1980" y="116" width="1800" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="InSb FPA → CTIA ROIC → TIA OpAmp → 14bit ADC → FPGA / TEC PID 온도제어 / LVDS 출력 / PMU 전원트리" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontColor=#8b949e;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1980" y="156" width="1800" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="rounded=1;fillColor=#161b22;strokeColor=#30363d;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="1820" y="188" width="2200" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="적외선 광자" style="rounded=1;fillColor=#1c2128;strokeColor=#388bfd;strokeWidth=1;fontColor=#79c0ff;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="194" width="120" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="endArrow=block;endFill=1;strokeColor=#388bfd;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="180" y="114" width="10" height="10" as="geometry">
+                        <mxPoint x="1960" y="210" as="sourcePoint"/>
+                        <mxPoint x="1986" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="InSb FPA 검출기" style="rounded=1;fillColor=#1c2128;strokeColor=#f78166;strokeWidth=1;fontColor=#f78166;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="1986" y="194" width="150" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="endArrow=block;endFill=1;strokeColor=#f78166;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="356" y="114" width="10" height="10" as="geometry">
+                        <mxPoint x="2136" y="210" as="sourcePoint"/>
+                        <mxPoint x="2162" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="CTIA ROIC" style="rounded=1;fillColor=#1c2128;strokeColor=#ffa657;strokeWidth=1;fontColor=#ffa657;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2162" y="194" width="120" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="endArrow=block;endFill=1;strokeColor=#ffa657;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="502" y="114" width="10" height="10" as="geometry">
+                        <mxPoint x="2282" y="210" as="sourcePoint"/>
+                        <mxPoint x="2308" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="TIA OpAmp" style="rounded=1;fillColor=#1c2128;strokeColor=#d2a8ff;strokeWidth=1;fontColor=#d2a8ff;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2308" y="194" width="120" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="endArrow=block;endFill=1;strokeColor=#d2a8ff;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="648" y="114" width="10" height="10" as="geometry">
+                        <mxPoint x="2428" y="210" as="sourcePoint"/>
+                        <mxPoint x="2454" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="14-bit ADC" style="rounded=1;fillColor=#1c2128;strokeColor=#7ee787;strokeWidth=1;fontColor=#7ee787;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2454" y="194" width="120" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="endArrow=block;endFill=1;strokeColor=#7ee787;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="794" y="114" width="10" height="10" as="geometry">
+                        <mxPoint x="2574" y="210" as="sourcePoint"/>
+                        <mxPoint x="2600" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="FPGA 영상처리" style="rounded=1;fillColor=#1c2128;strokeColor=#f0883e;strokeWidth=1;fontColor=#f0883e;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2600" y="194" width="140" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="endArrow=block;endFill=1;strokeColor=#f0883e;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="960" y="114" width="10" height="10" as="geometry">
+                        <mxPoint x="2740" y="210" as="sourcePoint"/>
+                        <mxPoint x="2766" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="NUC 보정" style="rounded=1;fillColor=#1c2128;strokeColor=#58a6ff;strokeWidth=1;fontColor=#58a6ff;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2766" y="194" width="110" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="endArrow=block;endFill=1;strokeColor=#58a6ff;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="1096" y="114" width="10" height="10" as="geometry">
+                        <mxPoint x="2876" y="210" as="sourcePoint"/>
+                        <mxPoint x="2902" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="LVDS 출력" style="rounded=1;fillColor=#1c2128;strokeColor=#a5d6ff;strokeWidth=1;fontColor=#a5d6ff;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2902" y="194" width="110" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="endArrow=block;endFill=1;strokeColor=#a5d6ff;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="1232" y="114" width="10" height="10" as="geometry">
+                        <mxPoint x="3012" y="210" as="sourcePoint"/>
+                        <mxPoint x="3038" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="TEC 온도제어" style="rounded=1;fillColor=#1c2128;strokeColor=#ff7b72;strokeWidth=1;fontColor=#ff7b72;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="3038" y="194" width="130" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="endArrow=block;endFill=1;strokeColor=#ff7b72;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="1388" y="114" width="10" height="10" as="geometry">
+                        <mxPoint x="3168" y="210" as="sourcePoint"/>
+                        <mxPoint x="3194" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="전원 PMU" style="rounded=1;fillColor=#1c2128;strokeColor=#ffa657;strokeWidth=1;fontColor=#ffa657;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="3194" y="194" width="110" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="rounded=1;fillColor=none;strokeColor=#f78166;strokeWidth=2;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+                    <mxGeometry x="1820" y="246" width="2200" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="① FPA 검출기 바이어스 회로 (InSb, 77K 냉각)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=16;fontStyle=1;fontColor=#f78166;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="254" width="700" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="rounded=1;fillColor=#161b22;strokeColor=#388bfd;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="284" width="320" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="WHY" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#58a6ff;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1848" y="292" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="InSb 역바이어스 → 공핍층↑ 광전류 선형성↑&#xa;암전류(dark current) 최소화&#xa;77K 냉각: 열잡음(kT noise) 극소화&#xa;V_bias = −0.1 ~ −1V 역방향 인가" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1848" y="312" width="300" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="rounded=1;fillColor=#161b22;strokeColor=#7ee787;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="2170" y="284" width="320" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="WHAT" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#7ee787;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2183" y="292" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="I_photo = R_λ × P_incident  [A/W]&#xa;R_λ: 응답도, P: 입사 광출력&#xa;전압 정밀도: ±1mV 이하 요구&#xa;디커플링: 100nF(세라믹) + 10μF(전해) 병렬" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2183" y="312" width="300" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="rounded=1;fillColor=#161b22;strokeColor=#ffa657;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="2505" y="284" width="420" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="HOW" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2518" y="292" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="① REF5010(+10V 기준전압) → R1=19kΩ, R2=1kΩ 분압&#xa;② V_bias = 10V × 1k/(19k+1k) = 0.5V → 반전 → −0.5V&#xa;③ 디커플링 커패시터: FPA 핀 최대한 근접 배치&#xa;④ 가드링(Guard Ring)으로 누설전류 차단" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2518" y="312" width="400" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="REF5010&#xa;+10V" style="ellipse;fillColor=#1c2128;strokeColor=#ffa657;strokeWidth=2;fontColor=#ffa657;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="1850" y="466" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="+" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontColor=#ff7b72;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="1880" y="444" width="20" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="endArrow=none;html=1;strokeColor=#ffa657;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="110" y="348" width="10" height="10" as="geometry">
+                        <mxPoint x="1890" y="444" as="sourcePoint"/>
+                        <mxPoint x="1890" y="466" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="41" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="110" y="450" width="10" height="10" as="geometry">
+                        <mxPoint x="1890" y="546" as="sourcePoint"/>
+                        <mxPoint x="1890" y="570" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="42" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="88" y="474" width="10" height="10" as="geometry">
+                        <mxPoint x="1868" y="570" as="sourcePoint"/>
+                        <mxPoint x="1912" y="570" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="94" y="480" width="10" height="10" as="geometry">
+                        <mxPoint x="1874" y="576" as="sourcePoint"/>
+                        <mxPoint x="1906" y="576" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="44" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1;" edge="1" parent="1">
+                    <mxGeometry x="100" y="486" width="10" height="10" as="geometry">
+                        <mxPoint x="1880" y="582" as="sourcePoint"/>
+                        <mxPoint x="1900" y="582" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="150" y="410" width="10" height="10" as="geometry">
+                        <mxPoint x="1930" y="506" as="sourcePoint"/>
+                        <mxPoint x="2000" y="506" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="46" value="R1&#xa;19kΩ" style="shape=mxgraph.electrical.resistors.resistor_1;fillColor=#1c2128;strokeColor=#d2a8ff;strokeWidth=2;fontColor=#d2a8ff;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="2000" y="486" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="300" y="410" width="10" height="10" as="geometry">
+                        <mxPoint x="2080" y="506" as="sourcePoint"/>
+                        <mxPoint x="2150" y="506" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="48" value="" style="ellipse;fillColor=#c9d1d9;strokeColor=#c9d1d9;" vertex="1" parent="1">
+                    <mxGeometry x="2144" y="500" width="12" height="12" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="R2&#xa;1kΩ" style="shape=mxgraph.electrical.resistors.resistor_1;fillColor=#1c2128;strokeColor=#d2a8ff;strokeWidth=2;fontColor=#d2a8ff;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=right;align=left;direction=south;" vertex="1" parent="1">
+                    <mxGeometry x="2130" y="526" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="370" y="510" width="10" height="10" as="geometry">
+                        <mxPoint x="2150" y="606" as="sourcePoint"/>
+                        <mxPoint x="2150" y="626" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="51" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="348" y="530" width="10" height="10" as="geometry">
+                        <mxPoint x="2128" y="626" as="sourcePoint"/>
+                        <mxPoint x="2172" y="626" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="354" y="537" width="10" height="10" as="geometry">
+                        <mxPoint x="2134" y="633" as="sourcePoint"/>
+                        <mxPoint x="2166" y="633" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="53" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1;" edge="1" parent="1">
+                    <mxGeometry x="360" y="544" width="10" height="10" as="geometry">
+                        <mxPoint x="2140" y="640" as="sourcePoint"/>
+                        <mxPoint x="2160" y="640" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="100nF" style="shape=mxgraph.electrical.capacitors.capacitor;fillColor=#1c2128;strokeColor=#58a6ff;strokeWidth=2;fontColor=#58a6ff;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=top;verticalAlign=bottom;" vertex="1" parent="1">
+                    <mxGeometry x="2230" y="486" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="370" y="410" width="10" height="10" as="geometry">
+                        <mxPoint x="2150" y="506" as="sourcePoint"/>
+                        <mxPoint x="2230" y="506" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="56" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="470" y="430" width="10" height="10" as="geometry">
+                        <mxPoint x="2250" y="526" as="sourcePoint"/>
+                        <mxPoint x="2250" y="556" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="452" y="460" width="10" height="10" as="geometry">
+                        <mxPoint x="2232" y="556" as="sourcePoint"/>
+                        <mxPoint x="2268" y="556" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="458" y="467" width="10" height="10" as="geometry">
+                        <mxPoint x="2238" y="563" as="sourcePoint"/>
+                        <mxPoint x="2262" y="563" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1;" edge="1" parent="1">
+                    <mxGeometry x="464" y="474" width="10" height="10" as="geometry">
+                        <mxPoint x="2244" y="570" as="sourcePoint"/>
+                        <mxPoint x="2256" y="570" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="60" value="10μF&#xa;(+)" style="shape=mxgraph.electrical.capacitors.capacitor;fillColor=#1c2128;strokeColor=#58a6ff;strokeWidth=2;fontColor=#58a6ff;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=top;verticalAlign=bottom;" vertex="1" parent="1">
+                    <mxGeometry x="2330" y="486" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="490" y="410" width="10" height="10" as="geometry">
+                        <mxPoint x="2270" y="506" as="sourcePoint"/>
+                        <mxPoint x="2330" y="506" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="62" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="570" y="430" width="10" height="10" as="geometry">
+                        <mxPoint x="2350" y="526" as="sourcePoint"/>
+                        <mxPoint x="2350" y="556" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="63" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="552" y="460" width="10" height="10" as="geometry">
+                        <mxPoint x="2332" y="556" as="sourcePoint"/>
+                        <mxPoint x="2368" y="556" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="64" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="558" y="467" width="10" height="10" as="geometry">
+                        <mxPoint x="2338" y="563" as="sourcePoint"/>
+                        <mxPoint x="2362" y="563" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="65" value="V_bias = −0.5V" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#ff7b72;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2155" y="454" width="180" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="" style="endArrow=none;html=1;strokeColor=#ff7b72;strokeWidth=1.5;dashed=1;dashPattern=6 3;" edge="1" parent="1">
+                    <mxGeometry x="370" y="378" width="10" height="10" as="geometry">
+                        <mxPoint x="2150" y="474" as="sourcePoint"/>
+                        <mxPoint x="2150" y="500" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="67" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="590" y="410" width="10" height="10" as="geometry">
+                        <mxPoint x="2370" y="506" as="sourcePoint"/>
+                        <mxPoint x="2440" y="506" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="68" value="InSb FPA&#xa;640×512, 77K" style="shape=mxgraph.electrical.signal_sources.diode;fillColor=#1c2128;strokeColor=#f78166;strokeWidth=2;fontColor=#f78166;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=top;verticalAlign=bottom;" vertex="1" parent="1">
+                    <mxGeometry x="2440" y="486" width="60" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="☀ 적외선" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2445" y="454" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="690" y="430" width="10" height="10" as="geometry">
+                        <mxPoint x="2470" y="526" as="sourcePoint"/>
+                        <mxPoint x="2470" y="556" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="71" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="672" y="460" width="10" height="10" as="geometry">
+                        <mxPoint x="2452" y="556" as="sourcePoint"/>
+                        <mxPoint x="2488" y="556" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="72" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="678" y="467" width="10" height="10" as="geometry">
+                        <mxPoint x="2458" y="563" as="sourcePoint"/>
+                        <mxPoint x="2482" y="563" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="73" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1;" edge="1" parent="1">
+                    <mxGeometry x="684" y="474" width="10" height="10" as="geometry">
+                        <mxPoint x="2464" y="570" as="sourcePoint"/>
+                        <mxPoint x="2476" y="570" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="74" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#7ee787;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="720" y="410" width="10" height="10" as="geometry">
+                        <mxPoint x="2500" y="506" as="sourcePoint"/>
+                        <mxPoint x="2610" y="506" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="75" value="I_photo (수 pA~μA)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontColor=#7ee787;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2506" y="486" width="180" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="ROIC&#xa;CTIA 입력" style="rounded=1;fillColor=#1c2128;strokeColor=#f78166;strokeWidth=2;fontColor=#f78166;fontSize=13;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2610" y="482" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="" style="rounded=1;fillColor=none;strokeColor=#d2a8ff;strokeWidth=2;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+                    <mxGeometry x="1820" y="641" width="2200" height="420" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="② TIA — Trans-Impedance Amplifier (OPA657, GBW=1.6GHz)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=16;fontStyle=1;fontColor=#d2a8ff;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="649" width="900" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="" style="rounded=1;fillColor=#161b22;strokeColor=#388bfd;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="679" width="320" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="WHY" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#58a6ff;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1848" y="687" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="ROIC 출력 = 전류 수 pA 수준&#xa;ADC는 전압 입력 → 전류→전압 변환 필수&#xa;V_out = −I_pd × R_f (반전증폭)&#xa;가상단락: V(−) = V(+) = 0V" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1848" y="707" width="300" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="" style="rounded=1;fillColor=#161b22;strokeColor=#7ee787;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="2170" y="679" width="320" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="WHAT" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#7ee787;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2183" y="687" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="R_f = V_FS/I_max = 5V/50μA = 100kΩ&#xa;f_-3dB = 1/(2π×R_f×C_f) = 1.6MHz&#xa;C_f = 1.6pF (위상마진 확보)&#xa;Noise = √(4kT×R_f×BW) [V/√Hz]" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2183" y="707" width="300" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="" style="rounded=1;fillColor=#161b22;strokeColor=#ffa657;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="2505" y="679" width="420" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="HOW" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2518" y="687" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="① OPA657: GBW=1.6GHz, e_n=4.8nV/√Hz, FET입력&#xa;② GBW 조건: 1.6GHz ≥ Gain×f_sig×10 확인&#xa;③ 전원: ±5V 양전원, VCC핀 100nF 디커플링&#xa;④ 레이아웃: R_f/C_f를 OpAmp 핀에 최대한 근접" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2518" y="707" width="400" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#f78166;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="55" y="800" width="10" height="10" as="geometry">
+                        <mxPoint x="1835" y="896" as="sourcePoint"/>
+                        <mxPoint x="1960" y="896" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="89" value="I_pd (수 pA)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontColor=#f78166;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="876" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="" style="ellipse;fillColor=#c9d1d9;strokeColor=#c9d1d9;" vertex="1" parent="1">
+                    <mxGeometry x="1954" y="890" width="12" height="12" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="180" y="800" width="10" height="10" as="geometry">
+                        <mxPoint x="1960" y="896" as="sourcePoint"/>
+                        <mxPoint x="2080" y="896" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="92" value="" style="shape=mxgraph.electrical.signal_sources.op-amp;fillColor=#1c2128;strokeColor=#d2a8ff;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="2078" y="858" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="−" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontColor=#ff7b72;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2084" y="868" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="+" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontColor=#7ee787;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2084" y="904" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="95" value="OPA657" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#8b949e;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2090" y="891" width="70" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="" style="endArrow=none;html=1;strokeColor=#ff7b72;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="348" y="740" width="10" height="10" as="geometry">
+                        <mxPoint x="2128" y="836" as="sourcePoint"/>
+                        <mxPoint x="2128" y="858" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="97" value="+5V" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontColor=#ff7b72;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2110" y="818" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="" style="endArrow=none;html=1;strokeColor=#58a6ff;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="348" y="842" width="10" height="10" as="geometry">
+                        <mxPoint x="2128" y="938" as="sourcePoint"/>
+                        <mxPoint x="2128" y="964" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="99" value="−5V" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontColor=#58a6ff;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2110" y="964" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="300" y="820" width="10" height="10" as="geometry">
+                        <mxPoint x="2080" y="916" as="sourcePoint"/>
+                        <mxPoint x="2038" y="916" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="101" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="258" y="820" width="10" height="10" as="geometry">
+                        <mxPoint x="2038" y="916" as="sourcePoint"/>
+                        <mxPoint x="2038" y="952" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="102" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="236" y="856" width="10" height="10" as="geometry">
+                        <mxPoint x="2016" y="952" as="sourcePoint"/>
+                        <mxPoint x="2060" y="952" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="103" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="242" y="863" width="10" height="10" as="geometry">
+                        <mxPoint x="2022" y="959" as="sourcePoint"/>
+                        <mxPoint x="2054" y="959" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="104" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1;" edge="1" parent="1">
+                    <mxGeometry x="248" y="870" width="10" height="10" as="geometry">
+                        <mxPoint x="2028" y="966" as="sourcePoint"/>
+                        <mxPoint x="2048" y="966" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="105" value="AGND" style="text;html=1;strokeColor=none;fillColor=none;align=right;fontSize=11;fontColor=#8b949e;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1960" y="946" width="56" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="398" y="800" width="10" height="10" as="geometry">
+                        <mxPoint x="2178" y="896" as="sourcePoint"/>
+                        <mxPoint x="2300" y="896" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="107" value="" style="ellipse;fillColor=#c9d1d9;strokeColor=#c9d1d9;" vertex="1" parent="1">
+                    <mxGeometry x="2294" y="890" width="12" height="12" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#7ee787;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="520" y="800" width="10" height="10" as="geometry">
+                        <mxPoint x="2300" y="896" as="sourcePoint"/>
+                        <mxPoint x="2460" y="896" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="109" value="V_out = −I × R_f  →  ADC 입력" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontColor=#7ee787;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2306" y="874" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="" style="endArrow=none;html=1;strokeColor=#ffa657;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="180" y="720" width="10" height="10" as="geometry">
+                        <mxPoint x="1960" y="890" as="sourcePoint"/>
+                        <mxPoint x="1960" y="816" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="111" value="" style="endArrow=none;html=1;strokeColor=#ffa657;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="180" y="720" width="10" height="10" as="geometry">
+                        <mxPoint x="1960" y="816" as="sourcePoint"/>
+                        <mxPoint x="2090" y="816" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="112" value="R_f = 100kΩ" style="shape=mxgraph.electrical.resistors.resistor_1;fillColor=#1c2128;strokeColor=#ffa657;strokeWidth=2;fontColor=#ffa657;fontSize=12;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=top;verticalAlign=bottom;" vertex="1" parent="1">
+                    <mxGeometry x="2090" y="796" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="" style="endArrow=none;html=1;strokeColor=#ffa657;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="410" y="720" width="10" height="10" as="geometry">
+                        <mxPoint x="2190" y="816" as="sourcePoint"/>
+                        <mxPoint x="2300" y="816" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="114" value="" style="endArrow=none;html=1;strokeColor=#ffa657;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="520" y="720" width="10" height="10" as="geometry">
+                        <mxPoint x="2300" y="816" as="sourcePoint"/>
+                        <mxPoint x="2300" y="890" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="115" value="C_f=1.6pF" style="shape=mxgraph.electrical.capacitors.capacitor;fillColor=#1c2128;strokeColor=#58a6ff;strokeWidth=2;fontColor=#58a6ff;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=top;verticalAlign=bottom;" vertex="1" parent="1">
+                    <mxGeometry x="2120" y="756" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="" style="endArrow=none;html=1;strokeColor=#58a6ff;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="310" y="680" width="10" height="10" as="geometry">
+                        <mxPoint x="2090" y="776" as="sourcePoint"/>
+                        <mxPoint x="2120" y="776" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="117" value="" style="endArrow=none;html=1;strokeColor=#58a6ff;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="380" y="680" width="10" height="10" as="geometry">
+                        <mxPoint x="2160" y="776" as="sourcePoint"/>
+                        <mxPoint x="2190" y="776" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="118" value="" style="endArrow=none;html=1;strokeColor=#58a6ff;strokeWidth=1;" edge="1" parent="1">
+                    <mxGeometry x="310" y="680" width="10" height="10" as="geometry">
+                        <mxPoint x="2090" y="776" as="sourcePoint"/>
+                        <mxPoint x="2090" y="816" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="119" value="" style="endArrow=none;html=1;strokeColor=#58a6ff;strokeWidth=1;" edge="1" parent="1">
+                    <mxGeometry x="410" y="680" width="10" height="10" as="geometry">
+                        <mxPoint x="2190" y="776" as="sourcePoint"/>
+                        <mxPoint x="2190" y="816" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="120" value="" style="rounded=1;fillColor=none;strokeColor=#ffa657;strokeWidth=2;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+                    <mxGeometry x="1820" y="1076" width="2200" height="420" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="③ CTIA ROIC + CDS (상관이중샘플링) — FPN/kTC 잡음 제거" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=16;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="1084" width="900" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="122" value="" style="rounded=1;fillColor=#161b22;strokeColor=#388bfd;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="1114" width="320" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="WHY" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#58a6ff;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1848" y="1122" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="124" value="픽셀 제조편차 → FPN(고정패턴잡음) 발생&#xa;kTC 잡음 = √(kT/C): 리셋 시 발생&#xa;CDS: V_signal − V_reset 차분으로 제거&#xa;CTIA: 전류를 C_int에 적분 → 전압 출력" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1848" y="1142" width="300" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="125" value="" style="rounded=1;fillColor=#161b22;strokeColor=#7ee787;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="2170" y="1114" width="320" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" value="WHAT" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#7ee787;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2183" y="1122" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="127" value="V_out = I_photo × t_int / C_int&#xa;C_int: 적분 커패시터 (50fF ~ 200fF)&#xa;순서: Reset → 적분 → S/H → CDS → ADC&#xa;DR = V_swing × C_int / I_max" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2183" y="1142" width="300" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="128" value="" style="rounded=1;fillColor=#161b22;strokeColor=#ffa657;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="2505" y="1114" width="420" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="HOW" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2518" y="1122" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" value="① M_RST(NMOS): 리셋 스위치, RST_CLK 신호 제어&#xa;② C_int 선택: 다이나믹레인지 = V_swing×C_int/I_max&#xa;③ S/H: φ1(리셋 직후 V_rst), φ2(적분 후 V_sig) 샘플&#xa;④ V_CDS = V_φ2 − V_φ1 → kTC 잡음 제거됨" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2518" y="1142" width="400" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="131" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#f78166;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="55" y="1230" width="10" height="10" as="geometry">
+                        <mxPoint x="1835" y="1326" as="sourcePoint"/>
+                        <mxPoint x="1960" y="1326" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="132" value="I_photo" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontColor=#f78166;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="1306" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" value="" style="ellipse;fillColor=#c9d1d9;strokeColor=#c9d1d9;" vertex="1" parent="1">
+                    <mxGeometry x="1954" y="1320" width="12" height="12" as="geometry"/>
+                </mxCell>
+                <mxCell id="134" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="180" y="1230" width="10" height="10" as="geometry">
+                        <mxPoint x="1960" y="1326" as="sourcePoint"/>
+                        <mxPoint x="2078" y="1326" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="135" value="" style="shape=mxgraph.electrical.signal_sources.op-amp;fillColor=#1c2128;strokeColor=#ffa657;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="2078" y="1288" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value="−" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontColor=#ff7b72;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2084" y="1298" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" value="+" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontColor=#7ee787;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2084" y="1334" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="CTIA" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontColor=#8b949e;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2090" y="1318" width="60" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="139" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="300" y="1250" width="10" height="10" as="geometry">
+                        <mxPoint x="2080" y="1346" as="sourcePoint"/>
+                        <mxPoint x="2035" y="1346" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="140" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="255" y="1250" width="10" height="10" as="geometry">
+                        <mxPoint x="2035" y="1346" as="sourcePoint"/>
+                        <mxPoint x="2035" y="1382" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="141" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="233" y="1286" width="10" height="10" as="geometry">
+                        <mxPoint x="2013" y="1382" as="sourcePoint"/>
+                        <mxPoint x="2057" y="1382" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="142" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="239" y="1293" width="10" height="10" as="geometry">
+                        <mxPoint x="2019" y="1389" as="sourcePoint"/>
+                        <mxPoint x="2051" y="1389" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="143" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1;" edge="1" parent="1">
+                    <mxGeometry x="245" y="1300" width="10" height="10" as="geometry">
+                        <mxPoint x="2025" y="1396" as="sourcePoint"/>
+                        <mxPoint x="2045" y="1396" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="144" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="398" y="1230" width="10" height="10" as="geometry">
+                        <mxPoint x="2178" y="1326" as="sourcePoint"/>
+                        <mxPoint x="2300" y="1326" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="145" value="" style="ellipse;fillColor=#c9d1d9;strokeColor=#c9d1d9;" vertex="1" parent="1">
+                    <mxGeometry x="2294" y="1320" width="12" height="12" as="geometry"/>
+                </mxCell>
+                <mxCell id="146" value="" style="endArrow=none;html=1;strokeColor=#d2a8ff;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="180" y="1224" width="10" height="10" as="geometry">
+                        <mxPoint x="1960" y="1320" as="sourcePoint"/>
+                        <mxPoint x="1960" y="1246" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="147" value="" style="endArrow=none;html=1;strokeColor=#d2a8ff;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="180" y="1150" width="10" height="10" as="geometry">
+                        <mxPoint x="1960" y="1246" as="sourcePoint"/>
+                        <mxPoint x="2130" y="1246" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="148" value="C_int=50fF" style="shape=mxgraph.electrical.capacitors.capacitor;fillColor=#1c2128;strokeColor=#d2a8ff;strokeWidth=2;fontColor=#d2a8ff;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=top;verticalAlign=bottom;" vertex="1" parent="1">
+                    <mxGeometry x="2130" y="1226" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="149" value="" style="endArrow=none;html=1;strokeColor=#d2a8ff;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="390" y="1150" width="10" height="10" as="geometry">
+                        <mxPoint x="2170" y="1246" as="sourcePoint"/>
+                        <mxPoint x="2300" y="1246" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="150" value="" style="endArrow=none;html=1;strokeColor=#d2a8ff;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="520" y="1150" width="10" height="10" as="geometry">
+                        <mxPoint x="2300" y="1246" as="sourcePoint"/>
+                        <mxPoint x="2300" y="1320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="151" value="M_RST&#xa;NMOS" style="shape=mxgraph.electrical.signal_sources.transistor_npn;fillColor=#1c2128;strokeColor=#7ee787;strokeWidth=2;fontColor=#7ee787;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="2210" y="1206" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="152" value="RST_CLK" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#7ee787;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2195" y="1188" width="90" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="153" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#58a6ff;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="520" y="1230" width="10" height="10" as="geometry">
+                        <mxPoint x="2300" y="1326" as="sourcePoint"/>
+                        <mxPoint x="2380" y="1326" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="154" value="S/H  φ1·φ2&#xa;V_CDS=V_φ2−V_φ1" style="rounded=1;fillColor=#1c2128;strokeColor=#58a6ff;strokeWidth=2;fontColor=#58a6ff;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2380" y="1304" width="200" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="155" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#7ee787;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="800" y="1233" width="10" height="10" as="geometry">
+                        <mxPoint x="2580" y="1329" as="sourcePoint"/>
+                        <mxPoint x="2680" y="1329" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="156" value="14-bit ADC&#xa;AD7942 250kSPS" style="rounded=1;fillColor=#1c2128;strokeColor=#7ee787;strokeWidth=2;fontColor=#7ee787;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2680" y="1304" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="157" value="타이밍: │ RESET │────── 적분 ──────│ READ │ CDS │  →  ADC&#xa;         V_rst                   V_sig    V_sig−V_rst (kTC 잡음 제거)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#8b949e;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="1436" width="900" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="158" value="" style="rounded=1;fillColor=none;strokeColor=#ff7b72;strokeWidth=2;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+                    <mxGeometry x="1820" y="1511" width="2200" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="159" value="④ TEC 열전냉각 PID 제어 회로 (DRV8701 H-Bridge)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=16;fontStyle=1;fontColor=#ff7b72;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="1519" width="800" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="160" value="" style="rounded=1;fillColor=#161b22;strokeColor=#388bfd;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="1549" width="320" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="161" value="WHY" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#58a6ff;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1848" y="1557" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="162" value="InSb 검출기: 77K 정밀 유지 필수&#xa;온도 편차 1K → 암전류 2배 증가&#xa;TEC(펠티어): 전류방향으로 냉각/가열&#xa;목표: ±0.01K 정밀 온도 제어" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1848" y="1577" width="300" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="163" value="" style="rounded=1;fillColor=#161b22;strokeColor=#7ee787;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="2170" y="1549" width="320" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="164" value="WHAT" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#7ee787;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2183" y="1557" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="165" value="NTC: R_T = R_25 × exp(B(1/T − 1/T_25))&#xa;PID: u = Kp×e + Ki×∫e dt + Kd×de/dt&#xa;H-Bridge: 양방향 전류로 냉각/가열&#xa;Q_cold = α×I×Tc − ½I²R − K×ΔT" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2183" y="1577" width="300" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="166" value="" style="rounded=1;fillColor=#161b22;strokeColor=#ffa657;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="2505" y="1549" width="420" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="167" value="HOW" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2518" y="1557" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="168" value="① NTC → Wheatstone 브리지 → InAmp(AD8221)&#xa;② 온도 ADC → MCU(STM32) PID 연산 500Hz&#xa;③ DRV8701 게이트드라이버 → 4×MOSFET H-Bridge&#xa;④ PWM 20kHz (가청주파수 이상) → TEC 전류 제어" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2518" y="1577" width="400" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="169" value="NTC&#xa;서미스터" style="shape=mxgraph.electrical.resistors.thermistor;fillColor=#1c2128;strokeColor=#58a6ff;strokeWidth=2;fontColor=#58a6ff;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=top;verticalAlign=bottom;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="1746" width="60" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#58a6ff;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="115" y="1670" width="10" height="10" as="geometry">
+                        <mxPoint x="1895" y="1766" as="sourcePoint"/>
+                        <mxPoint x="1960" y="1766" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="171" value="InAmp&#xa;AD8221" style="rounded=1;fillColor=#1c2128;strokeColor=#d2a8ff;strokeWidth=2;fontColor=#d2a8ff;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="1960" y="1744" width="120" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="172" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="300" y="1671" width="10" height="10" as="geometry">
+                        <mxPoint x="2080" y="1767" as="sourcePoint"/>
+                        <mxPoint x="2140" y="1767" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="173" value="ADC&#xa;온도값" style="rounded=1;fillColor=#1c2128;strokeColor=#7ee787;strokeWidth=2;fontColor=#7ee787;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2140" y="1744" width="100" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="174" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#7ee787;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="460" y="1671" width="10" height="10" as="geometry">
+                        <mxPoint x="2240" y="1767" as="sourcePoint"/>
+                        <mxPoint x="2300" y="1767" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="175" value="MCU PID&#xa;STM32 500Hz" style="rounded=1;fillColor=#1c2128;strokeColor=#ffa657;strokeWidth=2;fontColor=#ffa657;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2300" y="1744" width="140" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="176" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#ffa657;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="660" y="1671" width="10" height="10" as="geometry">
+                        <mxPoint x="2440" y="1767" as="sourcePoint"/>
+                        <mxPoint x="2510" y="1767" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="177" value="PWM&#xa;20kHz" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#8b949e;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2448" y="1744" width="60" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="178" value="" style="endArrow=none;html=1;strokeColor=#ff7b72;strokeWidth=2.5;" edge="1" parent="1">
+                    <mxGeometry x="730" y="1620" width="10" height="10" as="geometry">
+                        <mxPoint x="2510" y="1716" as="sourcePoint"/>
+                        <mxPoint x="2700" y="1716" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="179" value="+12V" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontColor=#ff7b72;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2590" y="1696" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="180" value="Q1" style="shape=mxgraph.electrical.signal_sources.transistor_npn;fillColor=#1c2128;strokeColor=#7ee787;strokeWidth=2;fontColor=#7ee787;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="2510" y="1726" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="181" value="Q2" style="shape=mxgraph.electrical.signal_sources.transistor_npn;fillColor=#1c2128;strokeColor=#7ee787;strokeWidth=2;fontColor=#7ee787;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="2640" y="1726" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="182" value="Q3" style="shape=mxgraph.electrical.signal_sources.transistor_npn;fillColor=#1c2128;strokeColor=#7ee787;strokeWidth=2;fontColor=#7ee787;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="2510" y="1826" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="183" value="Q4" style="shape=mxgraph.electrical.signal_sources.transistor_npn;fillColor=#1c2128;strokeColor=#7ee787;strokeWidth=2;fontColor=#7ee787;fontSize=11;fontFamily=Courier New;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="2640" y="1826" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="184" value="TEC 펠티어소자&#xa;냉각측 ↓ 77K&#xa;방열측 ↑ ∞" style="rounded=1;fillColor=#0d1117;strokeColor=#ff7b72;strokeWidth=2;fontColor=#ff7b72;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2740" y="1756" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="185" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="730" y="1840" width="10" height="10" as="geometry">
+                        <mxPoint x="2510" y="1936" as="sourcePoint"/>
+                        <mxPoint x="2700" y="1936" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="186" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="706" y="1840" width="10" height="10" as="geometry">
+                        <mxPoint x="2486" y="1936" as="sourcePoint"/>
+                        <mxPoint x="2724" y="1936" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="187" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="718" y="1848" width="10" height="10" as="geometry">
+                        <mxPoint x="2498" y="1944" as="sourcePoint"/>
+                        <mxPoint x="2712" y="1944" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="188" value="" style="endArrow=none;html=1;strokeColor=#8b949e;strokeWidth=1;" edge="1" parent="1">
+                    <mxGeometry x="730" y="1856" width="10" height="10" as="geometry">
+                        <mxPoint x="2510" y="1952" as="sourcePoint"/>
+                        <mxPoint x="2700" y="1952" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="189" value="← 온도 피드백 루프 (NTC 재측정 → PID 반복)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontColor=#58a6ff;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1980" y="1964" width="700" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="190" value="" style="rounded=1;fillColor=none;strokeColor=#a5d6ff;strokeWidth=2;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+                    <mxGeometry x="1820" y="1996" width="1060" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="191" value="⑤ LVDS 차동 출력 + PCB 4층 스택업" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=16;fontStyle=1;fontColor=#a5d6ff;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2004" width="700" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="192" value="" style="rounded=1;fillColor=#161b22;strokeColor=#388bfd;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2034" width="480" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="193" value="WHY / WHAT" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#58a6ff;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1848" y="2042" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="194" value="14b×640×512×30fps ≈ 138Mbps → LVDS 차동 필수&#xa;LVDS: ±350mV 차동, 100Ω 종단, CMRR으로 노이즈 제거&#xa;스큐 ±5ps 이내, Z_diff=100Ω±10%, 최대 3.125Gbps/lane" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1848" y="2062" width="460" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="195" value="FPGA&#xa;출력핀" style="rounded=1;fillColor=#1c2128;strokeColor=#f0883e;strokeWidth=2;fontColor=#f0883e;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2156" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="196" value="" style="endArrow=none;html=1;strokeColor=#a5d6ff;strokeWidth=3;" edge="1" parent="1">
+                    <mxGeometry x="155" y="2072" width="10" height="10" as="geometry">
+                        <mxPoint x="1935" y="2168" as="sourcePoint"/>
+                        <mxPoint x="2120" y="2168" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="197" value="" style="endArrow=none;html=1;strokeColor=#ff7b72;strokeWidth=3;" edge="1" parent="1">
+                    <mxGeometry x="155" y="2098" width="10" height="10" as="geometry">
+                        <mxPoint x="1935" y="2194" as="sourcePoint"/>
+                        <mxPoint x="2120" y="2194" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="198" value="D+" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;fontColor=#a5d6ff;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2010" y="2150" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="199" value="D−" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;fontColor=#ff7b72;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2010" y="2196" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="200" value="100Ω&#xa;종단" style="shape=mxgraph.electrical.resistors.resistor_1;fillColor=#1c2128;strokeColor=#ffa657;strokeWidth=2;fontColor=#ffa657;fontSize=11;fontFamily=Courier New;fontStyle=1;direction=south;verticalLabelPosition=right;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="2110" y="2158" width="40" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="201" value="" style="endArrow=none;html=1;strokeColor=#a5d6ff;strokeWidth=3;" edge="1" parent="1">
+                    <mxGeometry x="370" y="2072" width="10" height="10" as="geometry">
+                        <mxPoint x="2150" y="2168" as="sourcePoint"/>
+                        <mxPoint x="2250" y="2168" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="202" value="" style="endArrow=none;html=1;strokeColor=#ff7b72;strokeWidth=3;" edge="1" parent="1">
+                    <mxGeometry x="370" y="2098" width="10" height="10" as="geometry">
+                        <mxPoint x="2150" y="2194" as="sourcePoint"/>
+                        <mxPoint x="2250" y="2194" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="203" value="LVDS RX&#xa;SN65LVDS9637" style="rounded=1;fillColor=#1c2128;strokeColor=#a5d6ff;strokeWidth=2;fontColor=#a5d6ff;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2250" y="2154" width="180" height="54" as="geometry"/>
+                </mxCell>
+                <mxCell id="204" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#7ee787;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="650" y="2085" width="10" height="10" as="geometry">
+                        <mxPoint x="2430" y="2181" as="sourcePoint"/>
+                        <mxPoint x="2530" y="2181" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="205" value="→ 처리보드" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#7ee787;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2532" y="2174" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="206" value="PCB 4층 스택업" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontColor=#a5d6ff;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2264" width="200" height="22" as="geometry"/>
+                </mxCell>
+                <mxCell id="207" value="L1: Signal (Top)  35μm Cu" style="rounded=0;fillColor=#1c4a1c;strokeColor=#7ee787;strokeWidth=1;fontColor=#7ee787;fontSize=12;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2288" width="480" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="208" value="Prepreg  0.1mm" style="rounded=0;fillColor=#0d1117;strokeColor=#30363d;strokeWidth=0.5;fontColor=#8b949e;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2314" width="480" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="209" value="L2: GND 평면  35μm Cu" style="rounded=0;fillColor=#1c1c4a;strokeColor=#58a6ff;strokeWidth=1;fontColor=#58a6ff;fontSize=12;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2332" width="480" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="210" value="Core  1.0mm" style="rounded=0;fillColor=#0d1117;strokeColor=#30363d;strokeWidth=0.5;fontColor=#8b949e;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2358" width="480" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="211" value="L3: Power 평면  35μm Cu" style="rounded=0;fillColor=#4a1c1c;strokeColor=#ff7b72;strokeWidth=1;fontColor=#ff7b72;fontSize=12;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2376" width="480" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="212" value="Prepreg  0.1mm" style="rounded=0;fillColor=#0d1117;strokeColor=#30363d;strokeWidth=0.5;fontColor=#8b949e;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2402" width="480" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="213" value="L4: Signal (Bottom)  35μm Cu" style="rounded=0;fillColor=#1c4a1c;strokeColor=#7ee787;strokeWidth=1;fontColor=#7ee787;fontSize=12;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1835" y="2420" width="480" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="214" value="" style="rounded=1;fillColor=none;strokeColor=#ffa657;strokeWidth=2;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+                    <mxGeometry x="2900" y="1996" width="1160" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="215" value="⑥ PMU 전원 트리 — LDO + 벅컨버터 + 전하펌프" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=16;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="2915" y="2004" width="800" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="216" value="+12V IN" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;fontColor=#ff7b72;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2970" y="2066" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="217" value="" style="endArrow=none;html=1;strokeColor=#ff7b72;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry x="1240" y="1990" width="10" height="10" as="geometry">
+                        <mxPoint x="3020" y="2086" as="sourcePoint"/>
+                        <mxPoint x="3020" y="2116" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="218" value="L=22μH" style="shape=mxgraph.electrical.inductors.inductor;fillColor=#1c2128;strokeColor=#1b5e20;strokeWidth=2;fontColor=#1b5e20;fontSize=11;fontFamily=Courier New;fontStyle=1;direction=south;verticalLabelPosition=right;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="2998" y="2116" width="44" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="219" value="D_fw" style="shape=mxgraph.electrical.signal_sources.diode;fillColor=#1c2128;strokeColor=#7ee787;strokeWidth=2;fontColor=#7ee787;fontSize=11;fontFamily=Courier New;fontStyle=1;direction=south;verticalLabelPosition=right;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="2998" y="2206" width="44" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="220" value="C=100μF+" style="shape=mxgraph.electrical.capacitors.capacitor;fillColor=#1c2128;strokeColor=#58a6ff;strokeWidth=2;fontColor=#58a6ff;fontSize=11;fontFamily=Courier New;fontStyle=1;direction=south;verticalLabelPosition=right;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="2998" y="2258" width="44" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="221" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="1240" y="2206" width="10" height="10" as="geometry">
+                        <mxPoint x="3020" y="2302" as="sourcePoint"/>
+                        <mxPoint x="3020" y="2336" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="222" value="" style="ellipse;fillColor=#c9d1d9;strokeColor=#c9d1d9;" vertex="1" parent="1">
+                    <mxGeometry x="3014" y="2330" width="12" height="12" as="geometry"/>
+                </mxCell>
+                <mxCell id="223" value="" style="endArrow=none;html=1;strokeColor=#c9d1d9;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="1240" y="2240" width="10" height="10" as="geometry">
+                        <mxPoint x="3020" y="2336" as="sourcePoint"/>
+                        <mxPoint x="3380" y="2336" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="224" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#ffa657;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="1340" y="2240" width="10" height="10" as="geometry">
+                        <mxPoint x="3120" y="2336" as="sourcePoint"/>
+                        <mxPoint x="3120" y="2286" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="225" value="+3.3V 디지털&#xa;TPS54360 벅" style="rounded=1;fillColor=#1c2128;strokeColor=#ffa657;strokeWidth=1.5;fontColor=#ffa657;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="3060" y="2244" width="160" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="226" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#d2a8ff;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="1460" y="2240" width="10" height="10" as="geometry">
+                        <mxPoint x="3240" y="2336" as="sourcePoint"/>
+                        <mxPoint x="3240" y="2286" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="227" value="+3.3VA 아날로그&#xa;TPS7A4701 LDO&#xa;PSRR=72dB" style="rounded=1;fillColor=#1c2128;strokeColor=#d2a8ff;strokeWidth=1.5;fontColor=#d2a8ff;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="3160" y="2226" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="228" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#7ee787;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="1560" y="2240" width="10" height="10" as="geometry">
+                        <mxPoint x="3340" y="2336" as="sourcePoint"/>
+                        <mxPoint x="3340" y="2286" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="229" value="+1.0V FPGA Core&#xa;TPS62130 벅" style="rounded=1;fillColor=#1c2128;strokeColor=#7ee787;strokeWidth=1.5;fontColor=#7ee787;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="3260" y="2244" width="170" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="230" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#ff7b72;strokeWidth=1.5;" edge="1" parent="1">
+                    <mxGeometry x="1600" y="2240" width="10" height="10" as="geometry">
+                        <mxPoint x="3380" y="2336" as="sourcePoint"/>
+                        <mxPoint x="3440" y="2336" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="231" value="−5V 전하펌프&#xa;ICL7660" style="rounded=1;fillColor=#1c2128;strokeColor=#ff7b72;strokeWidth=1.5;fontColor=#ff7b72;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="3440" y="2316" width="150" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="232" value="AGND ─ ─ ★단일점 결합★ ─ ─ DGND" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;fontColor=#8b949e;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2915" y="2392" width="600" height="22" as="geometry"/>
+                </mxCell>
+                <mxCell id="233" value="⚠ 아날로그/디지털 GND 분리 후 1점 연결 필수" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;fontColor=#ff7b72;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="2915" y="2416" width="700" height="22" as="geometry"/>
+                </mxCell>
+                <mxCell id="234" value="" style="rounded=1;fillColor=#0d1117;strokeColor=#00e5a0;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="1820" y="2476" width="2200" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="235" value="📐 핵심 수식 모음" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=18;fontStyle=1;fontColor=#00e5a0;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2488" width="400" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="236" value="TIA" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2526" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="237" value="V_out = −I_pd × R_f  │  f_-3dB = 1/(2π×R_f×C_f)  │  Noise = √(4kT×R_f×BW)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1940" y="2526" width="900" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="238" value="CTIA" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2552" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="239" value="V_out = I×t_int/C_int  │  DR = V_swing×C_int/I_max  │  kTC = √(kT/C) → CDS로 제거" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1940" y="2552" width="900" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="240" value="ADC" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2578" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="241" value="V_LSB = V_ref/2^N = 5V/16384 = 305μV  │  SNR = 6.02×N+1.76 = 86.1dB (N=14)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1940" y="2578" width="900" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="242" value="TEC" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2604" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="243" value="Q_cold = α×I×Tc − ½I²R − K×ΔT  │  I_opt = αΔT/R  │  PID: Kp×e+Ki∫e+Kd×ė" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1940" y="2604" width="900" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="244" value="LVDS" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2630" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="245" value="Z_diff ≈ 100Ω  │  V_OD=350mV  │  l &lt; λ/10 (집중정수 조건)  │  스큐 ≤ ±5ps" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1940" y="2630" width="900" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="246" value="PCB Z0" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2656" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="247" value="Z0 = 87/√(ε_r+1.41) × ln(5.98h/(0.8w+t))  │  차동: Z_diff ≈ 2Z0(1−0.347e^(−2.9s/2h))" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1940" y="2656" width="900" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="248" value="MOSFET" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2682" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="249" value="P_sw = ½×V_DS×I_D×(t_r+t_f)×f  │  P_cond = I²×R_DS(on)  │  T_j = T_amb+P×θ_JA" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1940" y="2682" width="900" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="250" value="NUC" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2708" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="251" value="V_corr = G×V_raw + O  │  G=(V2−V1)/(T2−T1)  │  NEDT = V_noise/(dV/dT) [mK]" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1940" y="2708" width="900" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="252" value="광학" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#ffa657;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2734" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="253" value="IFOV = pixel_size/f [rad]  │  D* = √(A_d×BW)/NEP [Jones]  │  f/# = f/D_aperture" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#c9d1d9;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1940" y="2734" width="900" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="254" value="부품 레퍼런스 (BOM)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=13;fontStyle=1;fontColor=#00e5a0;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2764" width="300" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="255" value="OPA657(TIA)  AD8221(InAmp)  AD7942(14b ADC)  REF5025(Vref)  DRV8701(H-Bridge)  ICM-42688(IMU)&#xa;TPS7A4701(LDO)  TPS54360(Buck)  SN65LVDS9637(LVDS)  InSb FPA 640×512 15μm  Artix-7 FPGA  STM32H7 MCU" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontColor=#8b949e;fontFamily=Courier New;" vertex="1" parent="1">
+                    <mxGeometry x="1840" y="2786" width="2100" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
